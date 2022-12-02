@@ -21,7 +21,7 @@ def transpose(rows):
 def read_example(multiline, parser=str):
     """Split a multi-line string example, and parse each line into a record"""
     lines = dedent(multiline).splitlines()
-    return list(map(parser, lines))
+    return mapl(parser, lines)
 
 def read_input(filename, parser=str):
     """Read an input file, and parse each line into a record"""
