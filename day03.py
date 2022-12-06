@@ -4,7 +4,7 @@ Day 3: Rucksack Reorganization
 see https://adventofcode.com/2022/day/3
 """
 from utils import *
-from more_itertools import chunked
+from more_itertools import chunked, divide
 
 def shared_value(lists):
     common = set.intersection(*map(set, lists))
@@ -14,9 +14,8 @@ def score(values):
     points = "0abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     return sum(points.index(v) for v in values)
 
-def two_parts(line):
-    half = len(line) // 2
-    return line[:half], line[half:]
+def two_parts(xs):
+    return divide(2, xs)
 
 def solve1(lines):
     shared = [shared_value(pair) for pair in map(two_parts, lines)]

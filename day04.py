@@ -12,11 +12,11 @@ def parse(line):
 
 def fully_overlap(points):
     a1, a2, b1, b2 = points
-    return (a1 <= b1 and a2 >= b2) or (b1 <= a1 and b2 >= a2)
+    return (a1 <= b1 and b2 <= a2) or (b1 <= a1 and a2 <= b2)
 
 def overlap(points):
     a1, a2, b1, b2 = points
-    return (a1 <= b1 and a2 >= b1) or (b1 <= a1 and b2 >= a1)
+    return (a1 <= b1 <= a2) or (b1 <= a1 <= b2)
 
 def part1(lines):
     points = [parse(l) for l in lines]
